@@ -57,11 +57,9 @@ nav a:hover {
     position: relative;
 
     background-image: url("images/hero.jpg");
-    background-size: contain; /* keeps full image visible */fill entire screen
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    background-color: #f5f5f5;
 
     display: flex;
     flex-direction: column;
@@ -127,7 +125,7 @@ nav a:hover {
     background-color: #ff1493;
 }
 
-/* CONTENT SECTIONS */
+/* CONTENT SECTION */
 .content {
     padding: 60px 20px;
     text-align: center;
@@ -156,7 +154,6 @@ nav a:hover {
 /* SERVICES SECTION */
 .services-container {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
     gap: 25px;
@@ -164,7 +161,7 @@ nav a:hover {
     padding: 50px 20px;
 }
 
-/* CLICKABLE SERVICE LINK */
+/* SERVICE LINK */
 .service-link {
     text-decoration: none;
     color: inherit;
@@ -194,21 +191,20 @@ nav a:hover {
 /* IMAGE ROW */
 .image-row {
     display: flex;
-    flex-direction: column;
-
+    justify-content: center;
     align-items: center;
 
     gap: 12px;
 
     padding: 15px;
+
+    flex-wrap: wrap;
 }
 
 /* SERVICE IMAGES */
 .image-row img {
-    width: 100%;
-    max-width: 320px;
-
-    height: 220px;
+    width: 180px;
+    height: 180px;
 
     object-fit: cover;
 
@@ -227,12 +223,70 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* FOR SINGLE PAGE IMAGES */
+/* GALLERY SECTION */
+.gallery-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-section h1 {
+    color: #ff69b4;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+/* GALLERY CONTAINER */
+.gallery-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+/* GALLERY CARD */
+.gallery-card {
+    width: 180px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.gallery-card:hover {
+    transform: scale(1.03);
+}
+
+/* GALLERY IMAGES */
+.gallery-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+/* GALLERY TEXT */
+.gallery-card h3 {
+    padding: 10px;
+    color: #ff69b4;
+    font-size: 16px;
+}
+
+/* SINGLE PAGE IMAGES */
 .content img {
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
 
-    height: 250px;
+    height: 200px;
 
     object-fit: cover;
 
@@ -272,7 +326,6 @@ footer {
 
     .hero {
         height: 50vh;
-        background-size: cover;
     }
 
     .hero h1 {
@@ -291,7 +344,16 @@ footer {
         font-size: 24px;
     }
 
-    .image-row img {
-        max-width: 100%;
+    .gallery-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .gallery-card {
+        width: 150px;
+    }
+
+    .gallery-card img {
+        height: 150px;
     }
 }
